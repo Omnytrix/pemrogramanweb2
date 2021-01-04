@@ -6,6 +6,9 @@
 		{
 			parent::__construct();
 			$this->load->model('m_mahasiswa');
+			if(!$this->session->userdata('nama_pengguna') ){
+				redirect('login/index');
+			}
 
 		}
 

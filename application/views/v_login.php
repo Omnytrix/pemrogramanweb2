@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 	<link rel="stylesheet" href="<?= base_url('assets/bootstrap/css/bootstrap.min.css'); ?>">
 	<title>Login</title>
 
@@ -13,6 +14,12 @@
 				Form Login
 			</div>
 			<div class ="card-body">
+
+			<?php if ($this->session->flashdata('Pesan')){ ?>
+				<div class = "alert alert-danger animate__animated animate__shakeX">
+					<?php echo $this->session->flashdata('Pesan');?>
+				</div>
+				<?php } ?>
 				
 				<form action="<?=site_url('login/proses')?>" method="post">
 					<div class ="form-group">

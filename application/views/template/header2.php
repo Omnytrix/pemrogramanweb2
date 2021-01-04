@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Data Mahasiswa</title>
+	<title>Data User</title>
 	<link rel="stylesheet"
 		  href="<?= base_url('assets/bootstrap/css/bootstrap.min.css'); ?>">
 </head>
@@ -15,20 +15,15 @@
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav mr-auto">
 				<li class="nav-item active">
-					<a class="nav-link" href="<?= site_url('mahasiswa/index') ?>">Home</a>
+					<a class="nav-link" href="<?= site_url('mahasiswa/index') ?>">Data Mahasiswa</a>
 				</li>
-				<?php if ($this->session->userdata('hak_pengguna') == 'admin') { ?>
-				<li class="nav-item active">
-					<a class="nav-link" href="<?= site_url('pengguna/index') ?>">Data User</a>
-				</li>
-				<?php } ?>
 				<li class="nav-item">
-					<a class="nav-link" href="<?= site_url('mahasiswa/tambah') ?>">Tambah Data</a>
+					<a class="nav-link" href="<?= site_url('pengguna/tambah') ?>">Tambah Data</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="<?= site_url('login/logout') ?>">Logout</a>
 				</li>
 			</ul>
-			<a><?php echo $this->session->userdata('nama_pengguna'); ?> </a>
+			<a><?php echo $this->session->userdata('nama_pengguna');?> </a>
 		</div>
 	</nav>
